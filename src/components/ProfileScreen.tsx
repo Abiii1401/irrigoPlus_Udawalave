@@ -1,5 +1,5 @@
-import { User, CheckCircle2, XCircle, Bell, Globe, LogOut } from 'lucide-react';
-import { useState } from 'react';
+import { User, CheckCircle2, XCircle, Bell, Globe, LogOut } from "lucide-react";
+import { useState } from "react";
 
 export function ProfileScreen() {
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
@@ -21,7 +21,9 @@ export function ProfileScreen() {
           <div>
             <h2 className="text-slate-900">Pradeep Silva</h2>
             <p className="text-slate-600 mt-1">Field Officer</p>
-            <p className="text-sm text-slate-500 mt-1">pradeep.silva@agrisense.lk</p>
+            <p className="text-sm text-slate-500 mt-1">
+              pradeep.silva@IrrigoPlus+.lk
+            </p>
           </div>
         </div>
 
@@ -53,7 +55,9 @@ export function ProfileScreen() {
               </div>
               <div>
                 <p className="text-slate-900">Confirmed Alerts</p>
-                <p className="text-sm text-slate-600">Correctly validated issues</p>
+                <p className="text-sm text-slate-600">
+                  Correctly validated issues
+                </p>
               </div>
             </div>
             <span className="text-slate-900">75%</span>
@@ -66,7 +70,9 @@ export function ProfileScreen() {
               </div>
               <div>
                 <p className="text-slate-900">False Alerts</p>
-                <p className="text-sm text-slate-600">Helped improve detection</p>
+                <p className="text-sm text-slate-600">
+                  Helped improve detection
+                </p>
               </div>
             </div>
             <span className="text-slate-900">25%</span>
@@ -97,12 +103,12 @@ export function ProfileScreen() {
             </div>
             <div
               className={`w-12 h-7 rounded-full transition-all ${
-                notificationsEnabled ? 'bg-blue-600' : 'bg-slate-300'
+                notificationsEnabled ? "bg-blue-600" : "bg-slate-300"
               }`}
             >
               <div
                 className={`w-5 h-5 bg-white rounded-full mt-1 transition-all ${
-                  notificationsEnabled ? 'ml-6' : 'ml-1'
+                  notificationsEnabled ? "ml-6" : "ml-1"
                 }`}
               ></div>
             </div>

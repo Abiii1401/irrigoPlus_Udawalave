@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { Satellite, Mail, Lock } from 'lucide-react';
-import { PremiumSatelliteScanning } from './illustrations/PremiumIllustrations';
+import { useState } from "react";
+import { Satellite, Mail, Lock } from "lucide-react";
+import { PremiumSatelliteScanning } from "./illustrations/PremiumIllustrations";
 
 interface LoginScreenProps {
   onLogin: () => void;
 }
 
 export function LoginScreen({ onLogin }: LoginScreenProps) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
@@ -26,21 +26,24 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
       {/* Animated background gradients */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-green-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <div
+          className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-green-400/8 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        />
       </div>
 
       {/* Background illustration - very subtle */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
         <PremiumSatelliteScanning className="w-full max-w-4xl h-auto text-blue-900" />
       </div>
-      
+
       <div className="w-full max-w-md animate-scaleIn relative z-10">
         {/* Logo and Title */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center mb-6 relative">
             {/* Glow effect */}
             <div className="absolute inset-0 bg-blue-500/20 rounded-3xl blur-2xl animate-pulse" />
-            
+
             {/* Logo container */}
             <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-premium-xl">
               <Satellite className="w-10 h-10 text-white" />
@@ -50,7 +53,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
             </div>
           </div>
           <h1 className="text-3xl font-semibold bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent mb-2">
-            AgriSense Udawalawe
+            IrrigoPlus+ Udawalawe
           </h1>
           <p className="text-slate-600">Crop health monitoring system</p>
         </div>
@@ -59,7 +62,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
         <div className="gradient-premium-card rounded-2xl p-8 border border-slate-200/60 shadow-premium-lg backdrop-blur-sm relative overflow-hidden">
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 gradient-overlay-blue rounded-2xl" />
-          
+
           <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
             {/* Email Input */}
             <div className="space-y-2">
@@ -69,7 +72,9 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
               <div className="relative">
                 <div
                   className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all ${
-                    focusedField === 'email' ? 'text-blue-600' : 'text-slate-400'
+                    focusedField === "email"
+                      ? "text-blue-600"
+                      : "text-slate-400"
                   }`}
                 >
                   <Mail className="w-5 h-5" />
@@ -79,14 +84,14 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  onFocus={() => setFocusedField('email')}
+                  onFocus={() => setFocusedField("email")}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="your.email@agrisense.lk"
+                  placeholder="your.email@IrrigoPlus+.lk"
                   required
                   className={`w-full pl-12 pr-4 py-3 bg-slate-50 border rounded-xl transition-all outline-none ${
-                    focusedField === 'email'
-                      ? 'border-blue-300 bg-white shadow-sm scale-[1.01]'
-                      : 'border-slate-200 hover:border-slate-300'
+                    focusedField === "email"
+                      ? "border-blue-300 bg-white shadow-sm scale-[1.01]"
+                      : "border-slate-200 hover:border-slate-300"
                   }`}
                 />
               </div>
@@ -100,7 +105,9 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
               <div className="relative">
                 <div
                   className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all ${
-                    focusedField === 'password' ? 'text-blue-600' : 'text-slate-400'
+                    focusedField === "password"
+                      ? "text-blue-600"
+                      : "text-slate-400"
                   }`}
                 >
                   <Lock className="w-5 h-5" />
@@ -110,14 +117,14 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  onFocus={() => setFocusedField('password')}
+                  onFocus={() => setFocusedField("password")}
                   onBlur={() => setFocusedField(null)}
                   placeholder="Enter your password"
                   required
                   className={`w-full pl-12 pr-4 py-3 bg-slate-50 border rounded-xl transition-all outline-none ${
-                    focusedField === 'password'
-                      ? 'border-blue-300 bg-white shadow-sm scale-[1.01]'
-                      : 'border-slate-200 hover:border-slate-300'
+                    focusedField === "password"
+                      ? "border-blue-300 bg-white shadow-sm scale-[1.01]"
+                      : "border-slate-200 hover:border-slate-300"
                   }`}
                 />
               </div>
@@ -153,7 +160,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
                   Signing in...
                 </span>
               ) : (
-                'Sign in'
+                "Sign in"
               )}
             </button>
           </form>
